@@ -43,26 +43,36 @@ const IndexPage: React.FC<IndexPageProps> = ({
       >
         <div className="grid grid-rows-1 gap-5">
           <TeamCard
+            fromColor="#ff000b"
+            toColor="#ecaeb4"
             teamName={parsedDoc1.teamName}
             teamScore={parsedDoc1.teamScore}
             teamTag={parsedDoc1.teamTag}
           />
           <TeamCard
+            fromColor="#ffc20b"
+            toColor="#ecd9a9"
             teamName={parsedDoc2.teamName}
             teamScore={parsedDoc2.teamScore}
             teamTag={parsedDoc2.teamTag}
           />
           <TeamCard
+            fromColor="#04c20b"
+            toColor="#ecd9a9"
             teamName={parsedDoc3.teamName}
             teamScore={parsedDoc3.teamScore}
             teamTag={parsedDoc3.teamTag}
           />
           <TeamCard
+            fromColor="#04c2b3"
+            toColor="#54e5a9"
             teamName={parsedDoc4.teamName}
             teamScore={parsedDoc4.teamScore}
             teamTag={parsedDoc4.teamTag}
           />
           <TeamCard
+            fromColor="#7e3bdb"
+            toColor="#a956a9"
             teamName={parsedDoc5.teamName}
             teamScore={parsedDoc5.teamScore}
             teamTag={parsedDoc5.teamTag}

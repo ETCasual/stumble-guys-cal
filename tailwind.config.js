@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        anton: ['Anton', 'sans-serif'],
+        questrial: ['Questrial', 'sans-serif'],
       },
     },
   },
