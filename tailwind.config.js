@@ -6,6 +6,7 @@ module.exports = {
     extend: {
       fontFamily: {
         questrial: ['Questrial', 'sans-serif'],
+        montserrat: ['Montserrat', 'sans-serif'],
       },
     },
   },
