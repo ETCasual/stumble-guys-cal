@@ -55,7 +55,7 @@ export const TeamCard: React.FC<TeamCardProps> = ({
                 number === 0 ? 'invisible' : 'visible'
               }`}
               onClick={() => {
-                setNumber(number - 1)
+                setNumber(number - 10)
                 setIsClicked(true)
               }}
             >
@@ -73,7 +73,7 @@ export const TeamCard: React.FC<TeamCardProps> = ({
             <button
               className="p-3 bg-[#00aeef] rounded-md shadow-2xl"
               onClick={() => {
-                setNumber(number + 1)
+                setNumber(number + 10)
                 setIsClicked(true)
               }}
             >
