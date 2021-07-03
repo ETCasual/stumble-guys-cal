@@ -45,13 +45,13 @@ const ViewScores: React.FC = () => {
         <title>Scores | Stumble Guys Competition</title>
       </head>
       <div
-        className="flex flex-col w-[100vw] h-[100vh] justify-center px-2 py-10 lg:px-10 bg-local bg-center overflow-hidden"
+        className="flex flex-col w-[100vw] h-[100vh] items-center justify-center px-2 py-10 lg:px-10 bg-local bg-center overflow-hidden"
         style={{
           background:
             "url('https://gmedia.playstation.com/is/image/SIEPDC/fall-guys-ultimate-knockout-hero-01-en-20mar21?$native$')",
         }}
       >
-        <div className="self-center grid grid-cols-1 gap-3">
+        <div className="my-24 self-center grid grid-cols-1 gap-3">
           {retrievedData.map((data, i) => (
             <TeamCard
               disabled
@@ -61,7 +61,7 @@ const ViewScores: React.FC = () => {
               key={i}
               className={
                 i === 0
-                  ? 'from-[#ff000b] to-[#ecaeb4]'
+                  ? 'from-[#ff000b] to-[#ecaeb4] mt-24'
                   : i === 1
                   ? 'from-[#ffc20b] to-[#ecd9a9]'
                   : i === 2
