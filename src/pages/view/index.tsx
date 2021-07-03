@@ -51,7 +51,7 @@ const ViewScores: React.FC = () => {
             "url('https://gmedia.playstation.com/is/image/SIEPDC/fall-guys-ultimate-knockout-hero-01-en-20mar21?$native$')",
         }}
       >
-        <div className="my-24 self-center grid grid-cols-1 gap-3">
+        <div className="self-center grid grid-cols-1 gap-3">
           {retrievedData.map((data, i) => (
             <TeamCard
               disabled
