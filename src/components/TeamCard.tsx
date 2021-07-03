@@ -45,7 +45,7 @@ export const TeamCard: React.FC<TeamCardProps> = ({
       className={`flex flex-row  items-center bg-gradient-to-tr ${className} h-[130px] shadow-xl rounded-xl p-5 w-[330px] mx-auto`}
     >
       <div className="flex flex-row w-full items-center">
-        <p className="text-white text-2xl text-center w-2/5 font-questrial">
+        <p className="text-white text-xl text-center w-7/12 font-questrial">
           {teamTag}
           <br />
           <span className="text-base leading-none">{teamName}</span>
