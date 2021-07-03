@@ -19,7 +19,6 @@ interface IndexPageProps {
   parsedDoc1
   parsedDoc2
   parsedDoc3
-  parsedDoc4
   parsedDoc5
 }
 
@@ -27,7 +26,6 @@ const IndexPage: React.FC<IndexPageProps> = ({
   parsedDoc1,
   parsedDoc2,
   parsedDoc3,
-  parsedDoc4,
   parsedDoc5,
 }) => {
   const router = useRouter()
@@ -75,12 +73,6 @@ const IndexPage: React.FC<IndexPageProps> = ({
           />
           <TeamCard
             className="from-[#04c2b3] to-[#54e5a9]"
-            teamName={parsedDoc4.teamName}
-            teamScore={parsedDoc4.teamScore}
-            teamTag={parsedDoc4.teamTag}
-          />
-          <TeamCard
-            className="from-[#7e3bdb] to-[#a956a9]"
             teamName={parsedDoc5.teamName}
             teamScore={parsedDoc5.teamScore}
             teamTag={parsedDoc5.teamTag}
@@ -105,16 +97,12 @@ export const getServerSideProps: GetServerSideProps = async () => {
   const collectionRef3 = fb.firestore().collection('scores').doc('Yun Qi')
   const doc3 = await (await collectionRef3.get()).data()
 
-  const collectionRef4 = fb.firestore().collection('scores').doc('Arjay')
-  const doc4 = await (await collectionRef4.get()).data()
-
   const collectionRef5 = fb.firestore().collection('scores').doc('Jia Yue')
   const doc5 = await (await collectionRef5.get()).data()
 
   const parsedDoc1 = JSON.parse(JSON.stringify(doc1))
   const parsedDoc2 = JSON.parse(JSON.stringify(doc2))
   const parsedDoc3 = JSON.parse(JSON.stringify(doc3))
-  const parsedDoc4 = JSON.parse(JSON.stringify(doc4))
   const parsedDoc5 = JSON.parse(JSON.stringify(doc5))
-  return { props: { parsedDoc1, parsedDoc2, parsedDoc3, parsedDoc4, parsedDoc5 } }
+  return { props: { parsedDoc1, parsedDoc2, parsedDoc3, parsedDoc5 } }
 }
