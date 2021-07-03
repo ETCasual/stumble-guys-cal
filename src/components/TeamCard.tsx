@@ -46,9 +46,9 @@ export const TeamCard: React.FC<TeamCardProps> = ({
     >
       <div className="flex flex-row w-full items-center">
         <p className="text-white text-2xl text-center w-2/5 font-questrial">
-          {teamName}
+          {teamTag}
           <br />
-          <span className="text-base leading-none">{teamTag}</span>
+          <span className="text-base leading-none">{teamName}</span>
         </p>
         <div className={`flex flex-row items-center justify-between w-full`}>
           {!disabled ? (
