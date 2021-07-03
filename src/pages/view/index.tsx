@@ -36,7 +36,7 @@ const ViewScores: React.FC = () => {
   }, [fb])
 
   return loading ? (
-    <div className=" flex flex-row w-[100vw] font-questrial text-4xl items-center text-center justify-center">
+    <div className=" flex flex-row w-[100vw] h-[100vh] font-questrial text-4xl items-center text-center justify-center">
       Collecting Data
     </div>
   ) : (
@@ -45,7 +45,7 @@ const ViewScores: React.FC = () => {
         <title>Scores | Stumble Guys Competition</title>
       </head>
       <div
-        className="flex flex-col w-[100vw] h-[100vh] items-center justify-center px-2 py-10 lg:px-10 bg-local bg-center overflow-x-hidden"
+        className="flex flex-col w-[100vw]  items-center justify-center px-2 py-10 lg:px-10 bg-local bg-center overflow-x-hidden"
         style={{
           background:
             "url('https://gmedia.playstation.com/is/image/SIEPDC/fall-guys-ultimate-knockout-hero-01-en-20mar21?$native$')",
