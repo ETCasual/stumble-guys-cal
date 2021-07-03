@@ -46,7 +46,7 @@ const IndexPage: React.FC<IndexPageProps> = ({
         <title>Record Scores | Stumble Guys Competition</title>
       </head>
       <div
-        className="flex flex-col w-[100vw] justify-center px-2 py-10 lg:px-10 bg-local bg-center overflow-x-hidden"
+        className="flex flex-col w-[100vw] lg:w-[100vh] justify-center px-2 py-10 lg:px-10 bg-local bg-center overflow-x-hidden"
         style={{
           background:
             "url('https://gmedia.playstation.com/is/image/SIEPDC/fall-guys-ultimate-knockout-hero-01-en-20mar21?$native$')",

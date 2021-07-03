@@ -45,7 +45,7 @@ const ViewScores: React.FC = () => {
         <title>Scores | Stumble Guys Competition</title>
       </head>
       <div
-        className="flex flex-col w-[100vw]  items-center justify-center px-2 py-10 lg:px-10 bg-local bg-center overflow-x-hidden"
+        className="flex flex-col w-[100vw] lg:h-[100vh]  items-center justify-center px-2 py-10 lg:px-10 bg-local bg-center overflow-x-hidden"
         style={{
           background:
             "url('https://gmedia.playstation.com/is/image/SIEPDC/fall-guys-ultimate-knockout-hero-01-en-20mar21?$native$')",
