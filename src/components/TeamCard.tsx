@@ -42,13 +42,13 @@ export const TeamCard: React.FC<TeamCardProps> = ({
 
   return (
     <div
-      className={`flex flex-row  items-center bg-gradient-to-tr ${className} h-[130px] shadow-xl rounded-xl p-5 w-[350px] mx-auto`}
+      className={`flex flex-row  items-center bg-gradient-to-tr ${className} h-[130px] shadow-xl rounded-xl p-5 w-[330px] mx-auto`}
     >
-      <div className="flex flex-row w-full">
-        <p className="text-white text-3xl text-center w-full font-questrial">
+      <div className="flex flex-row w-full items-center">
+        <p className="text-white text-2xl text-center w-2/5 font-questrial">
           {teamName} <span className="text-lg">{teamTag}</span>
         </p>
-        <div className={`flex flex-row items-center justify-between w-[500px]`}>
+        <div className={`flex flex-row items-center justify-between w-full`}>
           {!disabled ? (
             <button
               className={`p-3 bg-[#00aeef] rounded-md shadow-2xl ${
@@ -63,7 +63,7 @@ export const TeamCard: React.FC<TeamCardProps> = ({
             </button>
           ) : null}
           <div
-            className={`font-questrial text-white text-4xl  ${
+            className={`font-questrial text-white text-3xl  ${
               disabled ? 'text-center w-full' : null
             }`}
           >
