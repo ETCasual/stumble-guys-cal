@@ -9,7 +9,7 @@
     "clean": "npx rimraf .next"
   },
   "dependencies": {
-    "@notionhq/client": "^0.4.0",
+    "@notionhq/client": "^0.2.4",
     "@react-firebase/firestore": "^0.5.5",
     "firebase": "^8.6.8",
     "next": "latest",
