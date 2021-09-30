@@ -9,14 +9,19 @@
     "clean": "npx rimraf .next"
   },
   "dependencies": {
+    "@notionhq/client": "^0.4.0",
     "@react-firebase/firestore": "^0.5.5",
     "firebase": "^8.6.8",
     "next": "latest",
+    "notion-client": "^4.8.6",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-icons": "^4.2.0"
+    "react-icons": "^4.2.0",
+    "react-loader-spinner": "^4.0.0"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.15.6",
+    "@babel/preset-react": "^7.14.5",
     "@types/node": "^12.12.21",
     "@types/react": "^17.0.2",
     "@types/react-dom": "^17.0.1",
@@ -34,6 +39,7 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "file-loader": "^6.2.0",
     "lint-staged": "^11.0.0",
+    "notion-types": "^4.8.2",
     "postcss": "^8.3.5",
     "prettier": "^2.3.2",
     "sass": "^1.35.1",
