@@ -5,7 +5,7 @@ import { getEnvVar } from '../../utils/helpers'
 
 const updateStatus = async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
   const uid = req.query.uid as string
-  const wnid = (Math.floor(Math.random() * 999) + 1).toString()
+  const wnid = (Math.floor(Math.random() * 9999) + 1).toString()
 
   const env = getEnvVar('NOTION_DATABASE').env
 
@@ -39,7 +39,13 @@ const updateStatus = async (req: NextApiRequest, res: NextApiResponse): Promise<
               type: 'text',
               text: {
                 content:
-                  wnid.length == 1 ? 'WN00' + wnid : wnid.length == 2 ? 'WN0' + wnid : 'WN' + wnid,
+                  wnid.length == 1
+                    ? 'WN000' + wnid
+                    : wnid.length == 2
+                    ? 'WN00' + wnid
+                    : wnid.length == 3
+                    ? 'WN0' + wnid
+                    : 'WN' + wnid,
               },
             },
           ],
