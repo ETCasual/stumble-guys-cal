@@ -6,13 +6,9 @@ import { GetServerSideProps } from 'next'
 import { getEnvVar } from '../utils/helpers'
 import notion, { parseUser } from '../lib/notion'
 import { DataCard } from '../components/DataCard'
+import { StartPageProps } from '.'
 
-export type StartPageProps = {
-  data: Notion.Data[]
-  error: boolean
-}
-
-const StartPage: React.FC<StartPageProps> = ({ data }) => {
+const ApprovedPage: React.FC<StartPageProps> = ({ data }) => {
   return (
     <>
       <Head>
@@ -34,7 +30,7 @@ const StartPage: React.FC<StartPageProps> = ({ data }) => {
     </>
   )
 }
-export default StartPage
+export default ApprovedPage
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const env = getEnvVar('NOTION_DATABASE').env
@@ -47,7 +43,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
           {
             property: 'Approval',
             checkbox: {
-              equals: false,
+              equals: true,
             },
           },
         ],
