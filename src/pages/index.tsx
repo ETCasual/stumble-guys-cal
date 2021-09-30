@@ -13,6 +13,7 @@ export type StartPageProps = {
 }
 
 const StartPage: React.FC<StartPageProps> = ({ data }) => {
+  const [dataState] = useState<typeof data>(data)
   const [searchText, setSearchText] = useState<string>('')
 
   const handleChange = (text: string) => {
@@ -35,14 +36,14 @@ const StartPage: React.FC<StartPageProps> = ({ data }) => {
       </div>
 
       <div className="px-10 py-5">
-        {data
-          .filter((d) => d.fullname.startsWith(searchText.toUpperCase()))
-          .map((d, i) => (
+        {dataState
+          .filter((d) => d.fullname.includes(searchText.toUpperCase()))
+          .map((d) => (
             <DataCard
               fullname={d.fullname}
               approval={d.approval}
               reciept={d.reciept}
-              key={i}
+              key={d.uid}
               uid={d.uid}
               wnid={d.wnid}
             />
@@ -81,7 +82,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
 
     const joinedArray = results.concat(results2)
 
-    console.log(joinedArray.length)
+    // console.log(JSON.stringify(joinedArray, null, 2))
 
     return { props: { data: joinedArray, error: false } }
   } catch (err) {
