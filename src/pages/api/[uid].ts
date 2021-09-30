@@ -1,3 +1,4 @@
+import { RichTextPropertyValue } from '@notionhq/client/build/src/api-types'
 import { NextApiRequest, NextApiResponse } from 'next'
 import notion from '../../lib/notion'
 import { getEnvVar } from '../../utils/helpers'
@@ -46,7 +47,7 @@ const updateStatus = async (req: NextApiRequest, res: NextApiResponse): Promise<
       },
     })
 
-    const xd = updateRes.properties['WNID'].rich_text[0].text.content
+    const xd = (updateRes.properties['WNID'] as RichTextPropertyValue).rich_text[0].plain_text
 
     return res.status(200).json({ wnid: xd })
   } catch (err) {
