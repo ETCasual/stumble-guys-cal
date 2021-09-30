@@ -42,20 +42,31 @@ export const getServerSideProps: GetServerSideProps = async () => {
   try {
     const res = await notion.databases.query({
       database_id: env as string,
-      filter: {
-        and: [
-          {
-            property: 'Approval',
-            checkbox: {
-              equals: false,
-            },
-          },
-        ],
-      },
+      // filter: {
+      //   and: [
+      //     {
+      //       property: 'Approval',
+      //       checkbox: {
+      //         equals: false,
+      //       },
+      //     },
+      //   ],
+      // },
+    })
+
+    const res2 = await notion.databases.query({
+      database_id: env as string,
+      start_cursor: res.next_cursor,
     })
 
     const results = res.results.map((result) => parseUser(result))
-    return { props: { data: results, error: false } }
+    const results2 = res2.results.map((result) => parseUser(result))
+
+    const joinedArray = results.concat(results2)
+
+    console.log(joinedArray.length)
+
+    return { props: { data: joinedArray, error: false } }
   } catch (err) {
     console.log(err)
     return { props: { error: true } }
