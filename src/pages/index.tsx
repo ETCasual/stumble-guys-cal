@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
-import React, { useState } from 'react'
-import { useRouter } from 'next/router'
+import React from 'react'
+
 import Head from 'next/head'
 import { GetServerSideProps } from 'next'
 import { getEnvVar } from '../utils/helpers'
@@ -13,7 +13,6 @@ export type StartPageProps = {
 }
 
 const StartPage: React.FC<StartPageProps> = ({ data }) => {
-  const router = useRouter()
   return (
     <>
       <Head>
