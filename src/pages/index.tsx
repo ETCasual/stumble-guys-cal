@@ -77,10 +77,16 @@ export const getServerSideProps: GetServerSideProps = async () => {
       start_cursor: res.next_cursor,
     })
 
+    const res3 = await notion.databases.query({
+      database_id: env as string,
+      start_cursor: res2.next_cursor,
+    })
+
     const results = res.results.map((result) => parseUser(result))
     const results2 = res2.results.map((result) => parseUser(result))
+    const results3 = res3.results.map((result) => parseUser(result))
 
-    const joinedArray = results.concat(results2)
+    const joinedArray = results.concat(results2).concat(results3)
 
     // console.log(JSON.stringify(joinedArray, null, 2))
 
