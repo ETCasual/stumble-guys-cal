@@ -50,7 +50,17 @@ export const DataCard: React.FC<Notion.Data> = ({ fullname, reciept, approval, w
           ) : null}
         </div>
       </div>
-      <img src={reciept} className="object-cover w-[300px] p-2" alt={fullname} />
+      {reciept == 'Free Registration' ? (
+        <img
+          src={
+            'https://thumbs.dreamstime.com/b/vector-rubber-stamp-effect-free-registration-rubber-stamp-effect-free-registration-110345952.jpg'
+          }
+          alt="Free Registration"
+          className="object-cover w-[300px] p-2"
+        />
+      ) : (
+        <img src={reciept} className="object-cover w-[300px] p-2" alt={fullname} />
+      )}
     </div>
   )
 }

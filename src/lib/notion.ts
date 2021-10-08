@@ -5,6 +5,7 @@ import {
   TitlePropertyValue,
   CheckboxPropertyValue,
   URLPropertyValue,
+  EmailPropertyValue,
 } from '@notionhq/client/build/src/api-types'
 
 export const allowedContent = {
@@ -27,6 +28,68 @@ if (!process.env.NOTION_SECRET_API_KEY) {
 
 export default new Client({ auth: process.env.NOTION_SECRET_API_KEY })
 
+export const parseUser2 = (page: Page): Notion.User2 => {
+  return {
+    uid:
+      (page.properties.Uid as RichTextPropertyValue).rich_text.length !== 0
+        ? (page.properties.Uid as RichTextPropertyValue).rich_text[0].plain_text
+        : null,
+    fullName:
+      (page.properties['Full Name'] as TitlePropertyValue).title.length !== 0
+        ? (page.properties['Full Name'] as TitlePropertyValue).title[0].plain_text
+        : null,
+    nickname:
+      (page.properties.Nickname as RichTextPropertyValue).rich_text.length !== 0
+        ? (page.properties.Nickname as RichTextPropertyValue).rich_text[0].plain_text
+        : null,
+    contact:
+      (page.properties.Contact as RichTextPropertyValue).rich_text.length !== 0
+        ? (page.properties.Contact as RichTextPropertyValue).rich_text[0].plain_text
+        : null,
+    dob:
+      (page.properties.Dob as RichTextPropertyValue).rich_text.length !== 0
+        ? (page.properties.Dob as RichTextPropertyValue).rich_text[0].plain_text
+        : null,
+    email:
+      (page.properties.Email as EmailPropertyValue).email.length !== 0
+        ? (page.properties.Email as EmailPropertyValue).email
+        : null,
+    ic:
+      (page.properties.Ic as RichTextPropertyValue).rich_text.length !== 0
+        ? (page.properties.Ic as RichTextPropertyValue).rich_text[0].plain_text
+        : null,
+    gender:
+      (page.properties.Gender as RichTextPropertyValue).rich_text.length !== 0
+        ? (page.properties.Gender as RichTextPropertyValue).rich_text[0].plain_text
+        : null,
+    status:
+      (page.properties['Pastoral Status'] as RichTextPropertyValue).rich_text.length !== 0
+        ? (page.properties['Pastoral Status'] as RichTextPropertyValue).rich_text[0].plain_text
+        : null,
+    address1:
+      (page.properties['Address Line 1'] as RichTextPropertyValue).rich_text.length !== 0
+        ? (page.properties['Address Line 1'] as RichTextPropertyValue).rich_text[0].plain_text
+        : null,
+    address2:
+      (page.properties['Address Line 2'] as RichTextPropertyValue).rich_text.length !== 0
+        ? (page.properties['Address Line 2'] as RichTextPropertyValue).rich_text[0].plain_text
+        : null,
+    smallTeam:
+      (page.properties['Small Team'] as RichTextPropertyValue).rich_text.length !== 0
+        ? (page.properties['Small Team'] as RichTextPropertyValue).rich_text[0].plain_text
+        : null,
+    cluster:
+      (page.properties.Cluster as RichTextPropertyValue).rich_text.length !== 0
+        ? (page.properties.Cluster as RichTextPropertyValue).rich_text[0].plain_text
+        : null,
+    cg:
+      (page.properties.CG as RichTextPropertyValue).rich_text.length !== 0
+        ? (page.properties.CG as RichTextPropertyValue).rich_text[0].plain_text
+        : null,
+    registered: (page.properties.Registered as CheckboxPropertyValue).checkbox,
+  }
+}
+
 export const parseUser = (page: Page): Notion.Data => {
   return {
     uid:
@@ -39,7 +102,9 @@ export const parseUser = (page: Page): Notion.Data => {
         : null,
     approval: (page.properties.Approval as CheckboxPropertyValue).checkbox,
     reciept:
-      (page.properties.Receipt as URLPropertyValue).url.length !== 0
+      (page.properties.Receipt as URLPropertyValue) == undefined
+        ? 'Free Registration'
+        : (page.properties.Receipt as URLPropertyValue).url.length !== 0
         ? (page.properties.Receipt as URLPropertyValue).url
         : null,
     wnid:
